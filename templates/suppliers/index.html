@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Supplier</th>
+        <th>Contact number</th>
+        <th>Email address</th>
+        <th>Actions</th>
+    </tr>
+    {% for supplier in suppliers %}
+    <tr>
+        <td>{{ supplier.name }}</td>
+        <td>{{ supplier.phone }}</td>
+        <td>{{ supplier.email }}</td>
+        <td>edit delete view</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

@@ -1,11 +1,19 @@
 import pdb
 from models.supplier import Supplier
 from models.product import Product
+import repositories.supplier_repository as supplier_repository
 
 supplier1 = Supplier("Madam Malkin's", "0200 1111", "muggles@malkins.co.uk")
+supplier_repository.save(supplier1)
+
 supplier2 = Supplier("Quality Quidditch Supplies", "0200 2222", "muggles@qqs.co.uk")
+supplier_repository.save(supplier2)
+
 supplier3 = Supplier("Scribbulus", "0200 3333", "muggles@scribbulus.co.uk")
+supplier_repository.save(supplier3)
+
 supplier4 = Supplier("Weasleys' Wizard Wheezes", "0200 4444", "muggles@weasleys.co.uk")
+supplier_repository.save(supplier4)
 
 product1 = Product(
     "Gryffindor Robes",
