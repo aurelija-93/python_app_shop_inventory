@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div>
+    <a href="/suppliers/new">add supplier</a>
+</div>
 <table>
     <tr>
         <th>Supplier</th>
@@ -13,7 +16,18 @@
         <td>{{ supplier.name }}</td>
         <td>{{ supplier.phone }}</td>
         <td>{{ supplier.email }}</td>
-        <td>edit delete view</td>
+        <td>
+            <div class="button-container">
+                <form action="/suppliers/{{ supplier.id }}">
+                    <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
+                </form>
+                <form action="/suppliers/{{ supplier.id }}/edit">
+                    <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+                </form>
+                <form action="/suppliers/{{ supplier.id }}/delete" method="POST">
+                    <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
+                </form>
+            </div>
     </tr>
     {% endfor %}
 </table>

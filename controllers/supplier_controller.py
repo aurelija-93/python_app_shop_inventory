@@ -28,8 +28,8 @@ def create():
     return redirect('/suppliers')
 
 @suppliers_blueprint.route('/suppliers/<id>/edit')
-def edit():
-    supplier = supplier_repository.select(supplier.id)
+def edit(id):
+    supplier = supplier_repository.select(id)
     return render_template('suppliers/edit.html', supplier=supplier)
 
 @suppliers_blueprint.route('/suppliers/<id>', methods=['POST'])

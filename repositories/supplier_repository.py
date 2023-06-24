@@ -24,7 +24,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        supplier = Supplier[result['name'], result['phone'], result['email'], result['id']]
+        supplier = Supplier(result['name'], result['phone'], result['email'], result['id'])
     return supplier
 
 def update(supplier):
