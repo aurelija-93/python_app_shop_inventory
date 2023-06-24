@@ -18,13 +18,25 @@ def select_all():
     return suppliers
 
 def select(id):
-    pass
+    supplier = None
+    sql = "SELECT * FROM suppliers where id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        supplier = Supplier[result['name'], result['phone'], result['email'], result['id']]
+    return supplier
 
 def update(supplier):
-    pass
+    sql = "UPDATE suppliers SET (name, phone, email) = (%s, %s, %s) WHERE id = %s"
+    values = [supplier.name, supplier.phone, supplier.email, supplier.id]
+    run_sql(sql, values)
 
 def delete_all():
-    pass
+    sql = "DELETE FROM suppliers"
+    run_sql(sql)
 
 def delete(id):
-    pass
+    sql = "DELETE FROM suppliers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

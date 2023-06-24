@@ -3,6 +3,8 @@ from models.supplier import Supplier
 from models.product import Product
 import repositories.supplier_repository as supplier_repository
 
+supplier_repository.delete_all()
+
 supplier1 = Supplier("Madam Malkin's", "0200 1111", "muggles@malkins.co.uk")
 supplier_repository.save(supplier1)
 
