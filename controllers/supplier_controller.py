@@ -37,8 +37,8 @@ def update(id):
     name = request.form['name']
     phone = request.form['phone']
     email = request.form['email']
-    supplier = Supplier(name, phone, email)
-    supplier_repository.save(supplier)
+    supplier = Supplier(name, phone, email, id)
+    supplier_repository.update(supplier)
     return redirect(f"/suppliers/{id}")
 
 @suppliers_blueprint.route('/suppliers/<id>/delete', methods=['POST'])
