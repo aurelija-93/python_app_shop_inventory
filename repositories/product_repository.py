@@ -3,11 +3,12 @@ from models.product import Product
 import repositories.supplier_repository as supplier_repository
 
 def save(product):
-    sql = "INSERT INTO products (name, description, stock, purchase_price, selling_price, supplier_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO products (name, description, stock, purchase_price, selling_price, supplier_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [product.name, product.description, product.stock, product.purchase_price, product.selling_price, product.supplier.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     product.id = id
+    return product
 
 def select_all():
     products = []

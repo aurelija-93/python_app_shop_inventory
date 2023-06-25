@@ -8,10 +8,11 @@
         <tr>
             <th>Product</th>
             <th>Stock</th>
-            <th>Purchase price / £</th>
-            <th>Selling price / £</th>
-            <th>Margin / %</th>
             <th>Supplier</th>
+            <th>Purchase price (£)</th>
+            <th>Selling price (£)</th>
+            <th>Margin (%)</th>
+            <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -20,17 +21,18 @@
                 <tr class="no-stock">
                     <td>{{ product.name }}</td>
                     <td>{{ product.stock }}</td>
+                    <td>{{ product.supplier.name }}</td>
                     <td>{{ product.purchase_price }}</td>
                     <td>{{ product.selling_price }}</td>
                     <td>{{ product.margin }}</td>
-                    <td>{{ product.supplier.name }}</td>
+                    <td>{{ product.description }}</td>
                     <td>
                         <form action="/products/{{ product.id }}/edit">
                             <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
                         </form>
                     </td>
                     <td>
-                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                        <form action="/products/{{ product.id }}/delete" method="POST">
                             <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
@@ -39,17 +41,18 @@
                 <tr class="low-stock">
                     <td>{{ product.name }}</td>
                     <td>{{ product.stock }}</td>
+                    <td>{{ product.supplier.name }}</td>
                     <td>{{ product.purchase_price }}</td>
                     <td>{{ product.selling_price }}</td>
                     <td>{{ product.margin }}</td>
-                    <td>{{ product.supplier.name }}</td>
+                    <td>{{ product.description }}</td>
                     <td>
                         <form action="/products/{{ product.id }}/edit">
                             <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
                         </form>
                     </td>
                     <td>
-                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                        <form action="/products/{{ product.id }}/delete" method="POST">
                             <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
@@ -58,17 +61,18 @@
                 <tr class="in-stock">
                     <td>{{ product.name }}</td>
                     <td>{{ product.stock }}</td>
+                    <td>{{ product.supplier.name }}</td>
                     <td>{{ product.purchase_price }}</td>
                     <td>{{ product.selling_price }}</td>
                     <td>{{ product.margin }}</td>
-                    <td>{{ product.supplier.name }}</td>
+                    <td>{{ product.description }}</td>
                     <td>
                         <form action="/products/{{ product.id }}/edit">
                             <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
                         </form>
                     </td>
                     <td>
-                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                        <form action="/products/{{ product.id }}/delete" method="POST">
                             <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>

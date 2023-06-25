@@ -25,8 +25,8 @@ def create():
     name = request.form['name']
     description = request.form['description']
     stock = request.form['stock']
-    purchase_price = request.form['purchase_price']
-    selling_price = request.form['selling_price']
+    purchase_price = int(request.form['purchase_price'])
+    selling_price = int(request.form['selling_price'])
     supplier_id = request.form['supplier_id']
     supplier = supplier_repository.select(supplier_id)
     product = Product(name, description, stock, purchase_price, selling_price, supplier)

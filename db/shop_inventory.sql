@@ -16,5 +16,5 @@ CREATE TABLE products (
     purchase_price INT,
     selling_price INT,
     margin INT,
-    supplier_id INT REFERENCES suppliers(id) ON DELETE CASCADE
+    supplier_id INT NOT NULL REFERENCES suppliers(id) ON DELETE CASCADE
 );
