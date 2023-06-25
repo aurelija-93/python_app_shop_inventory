@@ -9,7 +9,8 @@
         <th>Supplier</th>
         <th>Contact number</th>
         <th>Email address</th>
-        <th>Actions</th>
+        <th>Edit</th>
+        <th>View products</th>
     </tr>
     {% for supplier in suppliers %}
     <tr>
@@ -17,17 +18,15 @@
         <td>{{ supplier.phone }}</td>
         <td>{{ supplier.email }}</td>
         <td>
-            <div class="button-container">
-                <form action="/suppliers/{{ supplier.id }}">
-                    <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
-                </form>
-                <form action="/suppliers/{{ supplier.id }}/edit">
-                    <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
-                </form>
-                <form action="/suppliers/{{ supplier.id }}/delete" method="POST">
-                    <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
-                </form>
-            </div>
+            <form action="/suppliers/{{ supplier.id }}/edit">
+                <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+            </form>
+        </td>
+        <td>
+            <form action="/suppliers/{{ supplier.id }}">
+                <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>
