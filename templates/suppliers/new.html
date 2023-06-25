@@ -1,1 +1,22 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    <form class="new-supplier" action="/suppliers" method="POST">
+        <h1>Add new supplier</h1>
+        <div>
+            <label for="name">Supplier name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="phone">Contact number</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div>
+            <label for="email">Email address</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+{% endblock content %}
