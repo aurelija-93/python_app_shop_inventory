@@ -1,8 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.product import Product
-from models.supplier import Supplier
-from repositories.product_repository import product_repository
-from repositories.supplier_repository import supplier_repository
+from repositories import product_repository
+from repositories import supplier_repository
 
 products_blueprint = Blueprint('products', __name__)
 
@@ -26,8 +25,8 @@ def create():
     name = request.form['name']
     description = request.form['description']
     stock = request.form['stock']
-    purchase_price = request.form['purchase']
-    selling_price = request.form['selling']
+    purchase_price = request.form['purchase_price']
+    selling_price = request.form['selling_price']
     supplier_id = request.form['supplier_id']
     supplier = supplier_repository.select(supplier_id)
     product = Product(name, description, stock, purchase_price, selling_price, supplier)
