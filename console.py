@@ -2,7 +2,9 @@ import pdb
 from models.supplier import Supplier
 from models.product import Product
 import repositories.supplier_repository as supplier_repository
+import repositories.product_repository as product_repository
 
+product_repository.delete_all()
 supplier_repository.delete_all()
 
 supplier1 = Supplier("Madam Malkin's", "0200 1111", "muggles@malkins.co.uk")
@@ -22,16 +24,19 @@ product1 = Product(
     "Changes size according to the wearer. Includes self-repairing seams.",
     4, 300, 600, supplier1
     )
+
 product2 = Product(
     "Ravenclaw Robes",
     "Changes size according to the wearer. Includes self-repairing seams.",
     6, 300, 600, supplier1
     )
+
 product3 = Product(
     "Hufflepuff Robes",
     "Changes size according to the wearer. Includes self-repairing seams.",
     10, 300, 600, supplier1
     )
+
 product4 = Product(
     "Slytherin Robes",
     "Changes size according to the wearer. Includes self-repairing seams.",
@@ -92,5 +97,26 @@ product15 = Product(
     "Spell-correcting charm reliable for three months.",
     4, 10, 25, supplier4
     )
+
+products = [
+    product1,
+    product2,
+    product3,
+    product4,
+    product5,
+    product6,
+    product7,
+    product8,
+    product9,
+    product10,
+    product11,
+    product12,
+    product13,
+    product14,
+    product15
+    ]
+
+for product in products:
+    product_repository.save(product)
 
 pdb.set_trace()

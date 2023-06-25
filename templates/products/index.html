@@ -1,1 +1,79 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <a href="/products/new">add product</a>
+    </div>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Stock</th>
+            <th>Purchase price / £</th>
+            <th>Selling price / £</th>
+            <th>Margin / %</th>
+            <th>Supplier</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for product in products %}
+            {% if product.stock == 0 %}
+                <tr class="no-stock">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>{{ product.purchase_price }}</td>
+                    <td>{{ product.selling_price }}</td>
+                    <td>{{ product.margin }}</td>
+                    <td>{{ product.supplier.name }}</td>
+                    <td>
+                        <form action="/products/{{ product.id }}/edit">
+                            <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                            <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {% elif product.stock < 5 %}
+                <tr class="low-stock">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>{{ product.purchase_price }}</td>
+                    <td>{{ product.selling_price }}</td>
+                    <td>{{ product.margin }}</td>
+                    <td>{{ product.supplier.name }}</td>
+                    <td>
+                        <form action="/products/{{ product.id }}/edit">
+                            <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                            <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr class="in-stock">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.stock }}</td>
+                    <td>{{ product.purchase_price }}</td>
+                    <td>{{ product.selling_price }}</td>
+                    <td>{{ product.margin }}</td>
+                    <td>{{ product.supplier.name }}</td>
+                    <td>
+                        <form action="/products/{{ product.id }}/edit">
+                            <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/products/{{ product.id }}/delete" metdod="POST">
+                            <button class="buttons"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endblock content %}

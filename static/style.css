@@ -5,3 +5,11 @@ body{
 tr{
     height: 80px;
 }
+
+.low-stock{
+  background-color: orange;
+}
+
+.no-stock{
+  background-color: red;
+}

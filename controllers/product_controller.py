@@ -34,8 +34,9 @@ def create():
     return redirect('/products')
 
 @products_blueprint.route('/products/<id>/edit')
-def edit():
-    return render_template('/products/edit.html')
+def edit(id):
+    product = product_repository.select(id)
+    return render_template('/products/edit.html', product=product)
 
 @products_blueprint.route('/products/<id>', methods=['POST'])
 def update(id):
@@ -50,7 +51,7 @@ def update(id):
     product_repository.update(product)
     return redirect(f"/products/{id}")
 
-@products_blueprint.route('/products/<id>/delete')
+@products_blueprint.route('/products/<id>/delete', methods=['POST'])
 def delete(id):
     product_repository.delete(id)
     return redirect('/products')
