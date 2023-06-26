@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="new-supplier" action="/suppliers/{{ supplier.id }}" method="POST">
+    <form class="supplier-form" action="/suppliers/{{ supplier.id }}" method="POST">
         <h1>Edit supplier</h1>
         <div>
             <label for="name">Supplier name</label>
