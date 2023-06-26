@@ -44,3 +44,13 @@ def delete(id):
     sql = 'DELETE FROM products WHERE id = %s'
     values = [id]
     run_sql(sql, values)
+
+def products_for_supplier(id):
+    products = []
+    sql = "SELECT * FROM products WHERE supplier_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for row in results:
+        product = Product(row['name'], row['description'], row['stock'], row['purchase_price'], row['selling_price'], row['supplier_id'], row['id'])
+        products.append(product)
+    return products
