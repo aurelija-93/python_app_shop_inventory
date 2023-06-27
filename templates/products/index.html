@@ -1,24 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
+    <header class="functions">
         <a href="/products/new">add product</a>
-    </div>
-    <!-- <form action="/products/filter" method="POST">
-        <div>
-            <label for="filter">Filter by supplier</label>
-            <select name="supplier_id" id="filter">
+        <div class="dropdown">
+            <button class="dropbtn">Filter by supplier
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
                 {% for supplier in suppliers %}
-                    <option value="{{ supplier.id }}">{{ supplier.name }}</option>
+                <a href="/suppliers/{{ supplier.id }}">{{ supplier.name }}</a>
                 {% endfor %}
-            </select>
+            </div>
         </div>
-        <div>
-            <input type="submit">
-        </div>
-    </form> -->
-    <table>
-        <tr>
+    </header>
+        <table>
+            <tr>
             <th>Product</th>
             <th>Stock</th>
             <th>Supplier</th>
