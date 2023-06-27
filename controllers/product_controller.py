@@ -8,7 +8,8 @@ products_blueprint = Blueprint('products', __name__)
 @products_blueprint.route('/products')
 def index():
     products = product_repository.select_all()
-    return render_template('/products/index.html', products=products)
+    suppliers = supplier_repository.select_all()
+    return render_template('/products/index.html', products=products, suppliers=suppliers)
 
 @products_blueprint.route('/products/<id>')
 def show(id):

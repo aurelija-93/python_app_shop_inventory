@@ -14,6 +14,7 @@
         <div>
             <label for="supplier">Supplier</label>
             <select name="supplier_id" id="supplier">
+                <option value="">--Choose a supplier--</option>
                 {% for supplier in suppliers %}
                     <option value="{{ supplier.id }}">{{ supplier.name }}</option>
                 {% endfor %}
@@ -29,7 +30,7 @@
         </div>
         <div>
             <label for="description">Description</label>
-            <input type="text" name="description", id="description">
+            <textarea name="description" id="description" cols="30" rows="2"></textarea>
         </div>
         <div>
             <input type="submit">
