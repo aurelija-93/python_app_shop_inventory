@@ -1,17 +1,66 @@
-body{
-    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
-  }
-
-tr{
-    height: 80px;
+body {
+  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  margin: 0;
 }
 
-.low-stock{
-  background-color: orange;
+.home-page {
+  background-color: #0B486B;
 }
 
-.no-stock{
-  background-color: red;
+.lg-logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.large-logo {
+  width: 50%;
+  height: auto;
+  margin-bottom: 5rem;
+}
+
+.home-page-nav {
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.home-page-nav > li {
+  padding: 5rem;
+  border-radius: 60px;
+  background-color: #CFF09E;
+}
+
+.home-page-nav > li > a {
+  color: #0B486B;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #0B486B;
+}
+
+.small-logo {
+  width: 20rem;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+}
+
+li > a {
+  color: #CFF09E;
+}
+
+.functions {
+  display: flex;
 }
 
 /* The dropdown container */
@@ -65,4 +114,16 @@ tr{
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+  
+tr {
+    height: 80px;
+}
+
+.low-stock {
+  background-color: orange;
+}
+
+.no-stock {
+  background-color: red;
 }

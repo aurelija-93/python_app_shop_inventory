@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Wizard Wares</title>
 </head>
-<body>
-    <ul>
-        <nav>
+<body class="home-page">
+    <div class="lg-logo-container">
+        <img class="large-logo" src="{{ url_for('static', filename = '/images/logo.png') }}">
+    </div>
+    <nav>
+        <ul class="home-page-nav">
             <li><a href="/products">VIEW INVENTORY</a></li>
             <li><a href="/suppliers">VIEW SUPPLIERS</a></li>
-        </nav>
-    </ul>
+        </ul>
+    </nav>
 </body>
 </html>
