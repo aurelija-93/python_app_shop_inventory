@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="supplier-form" action="/suppliers/{{ supplier.id }}" method="POST">
+    <div class="form-container">
         <h1>Edit supplier</h1>
-        <div>
-            <label for="name">Supplier name</label>
-            <input type="text" name="name" id="name" value="{{ supplier.name }}">
-        </div>
-        <div>
-            <label for="phone">Contact number</label>
-            <input type="tel" name="phone" id="phone" value="{{ supplier.phone }}">
-        </div>
-        <div>
-            <label for="email">Email address</label>
-            <input type="email" name="email" id="email" value="{{ supplier.email }}">
-        </div>
-        <div>
-            <input type="submit">
-        </div>
-    </form>
+        <form action="/suppliers/{{ supplier.id }}" method="POST">
+            <div>
+                <label for="name">Supplier name</label>
+                <input type="text" name="name" id="name" value="{{ supplier.name }}">
+            </div>
+            <div>
+                <label for="phone">Contact number</label>
+                <input type="tel" name="phone" id="phone" value="{{ supplier.phone }}">
+            </div>
+            <div>
+                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" value="{{ supplier.email }}">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
 {% endblock content %}

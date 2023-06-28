@@ -1,39 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="product-form" action="/products" method="POST">
+    <div class="form-container">
         <h1>Add new product</h1>
-        <div>
-            <label for="name">Product name</label>
-            <input type="text" name="name" id="name">
-        </div>
-        <div>
-            <label for="stock">Stock</label>
-            <input type="number" name="stock" id="stock">
-        </div>
-        <div>
-            <label for="supplier">Supplier</label>
-            <select name="supplier_id" id="supplier">
-                <option value="">--Choose a supplier--</option>
-                {% for supplier in suppliers %}
-                    <option value="{{ supplier.id }}">{{ supplier.name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <label for="purchase_price">Purchase price (£)</label>
-            <input type="number" name="purchase_price" id="purchase_price">
-        </div>
-        <div>
-            <label for="selling_price">Selling price (£)</label>
-            <input type="number" name="selling_price" id="selling_price">
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <textarea name="description" id="description" cols="30" rows="2"></textarea>
-        </div>
-        <div>
-            <input type="submit">
-        </div>
-    </form>
+        <form action="/products" method="POST">
+            <div>
+                <label for="name">Product name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" id="stock">
+            </div>
+            <div>
+                <label for="supplier">Supplier</label>
+                <select name="supplier_id" id="supplier">
+                    <option value="">--Choose a supplier--</option>
+                    {% for supplier in suppliers %}
+                        <option value="{{ supplier.id }}">{{ supplier.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="purchase_price">Purchase price (£)</label>
+                <input type="number" name="purchase_price" id="purchase_price">
+            </div>
+            <div>
+                <label for="selling_price">Selling price (£)</label>
+                <input type="number" name="selling_price" id="selling_price">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="2"></textarea>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
 {% endblock content %}

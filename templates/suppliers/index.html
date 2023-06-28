@@ -24,12 +24,12 @@
                         <td>{{ supplier.phone }}</td>
                         <td><a href="/suppliers">{{ supplier.email }}</a></td>
                         <td>
-                            <form action="/suppliers/{{ supplier.id }}/edit">
+                            <form class="button-form" action="/suppliers/{{ supplier.id }}/edit">
                                 <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
                             </form>
                         </td>
                         <td>
-                            <form action="/suppliers/{{ supplier.id }}">
+                            <form class="button-form" action="/suppliers/{{ supplier.id }}">
                                 <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
                             </form>
                         </td>
