@@ -177,7 +177,7 @@ table {
   border-collapse: collapse;
   font-size: 0.9rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
-  background-color: #d1dfe7;
+  background-color: #e7eef2;
 }
 
 thead > tr {
@@ -200,10 +200,6 @@ tbody > tr {
 
 tbody > tr:last-of-type {
   border-bottom: 4px solid #0B486B;
-}
-
-tbody > tr:nth-of-type(odd) {
-  background-color: #e7eef2;
 }
 
 td {

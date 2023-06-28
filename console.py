@@ -99,21 +99,21 @@ product15 = Product(
     )
 
 products = [
-    product1,
-    product2,
-    product3,
-    product4,
-    product5,
-    product6,
     product7,
-    product8,
-    product9,
-    product10,
-    product11,
     product12,
+    product5,
+    product1,
+    product9,
+    product11,
+    product2,
     product13,
-    product14,
-    product15
+    product4,
+    product15,
+    product6,
+    product8,
+    product10,
+    product3,
+    product14
     ]
 
 for product in products:

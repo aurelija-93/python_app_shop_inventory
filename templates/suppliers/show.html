@@ -4,7 +4,7 @@
     <header class="supplier-info">
         <h1>Products stocked from {{ supplier.name }}</h1>
         <h2>Contact number: {{ supplier.phone }}</h2>
-        <h2>Email address: <a href="/suppliers">{{ supplier.email }}</a></h2>
+        <h2>Email address: <a href="/suppliers/{{ supplier.id }}">{{ supplier.email }}</a></h2>
     </header>
     <div class="scroll">
         <table>
