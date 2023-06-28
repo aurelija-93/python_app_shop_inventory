@@ -90,12 +90,4 @@
             {% endif %}
         {% endfor %}
     </table>
-    <nav>
-        <h1>Filter by supplier</h1>
-        <ul>
-            {% for supplier in suppliers %}
-                <li><a href="/suppliers/{{ supplier.id }}">{{ supplier.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
 {% endblock content %}
