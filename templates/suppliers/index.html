@@ -1,33 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <a href="/suppliers/new">add supplier</a>
+    <header class="functions">
+        <div class="add-new">
+            <a href="/suppliers/new">Add supplier</a>
+        </div>
+    </header>
+    <div class="scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>Supplier</th>
+                    <th>Contact number</th>
+                    <th>Email address</th>
+                    <th>Edit</th>
+                    <th>View products</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for supplier in suppliers %}
+                    <tr class="supplier">
+                        <td >{{ supplier.name }}</td>
+                        <td>{{ supplier.phone }}</td>
+                        <td><a href="/suppliers">{{ supplier.email }}</a></td>
+                        <td>
+                            <form action="/suppliers/{{ supplier.id }}/edit">
+                                <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/suppliers/{{ supplier.id }}">
+                                <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-    <table>
-        <tr>
-            <th>Supplier</th>
-            <th>Contact number</th>
-            <th>Email address</th>
-            <th>Edit</th>
-            <th>View products</th>
-        </tr>
-        {% for supplier in suppliers %}
-        <tr class="supplier">
-            <td >{{ supplier.name }}</td>
-            <td>{{ supplier.phone }}</td>
-            <td>{{ supplier.email }}</td>
-            <td>
-                <form action="/suppliers/{{ supplier.id }}/edit">
-                    <button class="buttons"><i class="fa-solid fa-file-pen"></i></button>
-                </form>
-            </td>
-            <td>
-                <form action="/suppliers/{{ supplier.id }}">
-                    <button class="buttons"><i class="fa-solid fa-clipboard-list"></i></button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
 {% endblock content %}

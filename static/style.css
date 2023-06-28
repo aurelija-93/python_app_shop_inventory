@@ -94,12 +94,12 @@ a {
   padding: 0.5rem 0;
 }
 
-.functions > .add-product {
+.functions > .add-new {
   display: flex;
   justify-content: center;
 }
 
-.functions > .add-product > a {
+.functions > .add-new > a {
   color: white;
   text-decoration: none;
   padding: 1rem 1.2rem;
@@ -243,4 +243,27 @@ td:nth-child(8) {
 
 .no-stock {
   background-color: rgb(229, 201, 201);
+}
+
+.supplier-info {
+  text-align: center;
+  color: white;
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.0rem;
+}
+
+h2 > a {
+  text-decoration: none;
+  color: white;
+}
+
+h2 > a:hover {
+  text-decoration: underline;
 }
