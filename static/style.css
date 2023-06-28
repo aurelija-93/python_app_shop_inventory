@@ -1,6 +1,7 @@
 body {
-  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px;
   margin: 0;
+  width: 100%;
 }
 
 .home-page {
@@ -16,7 +17,6 @@ body {
 .large-logo {
   width: 50%;
   height: auto;
-  margin-bottom: 5rem;
 }
 
 .home-page-nav {
@@ -25,13 +25,24 @@ body {
 }
 
 .home-page-nav > li {
-  padding: 5rem;
-  border-radius: 60px;
-  background-color: #CFF09E;
+  width: 15%;
+  padding: 5% 8%;
+  margin: 2rem;
+  border-radius: 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .home-page-nav > li > a {
+  font-size: 1.5rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-stretch: ultra-expanded;
+  text-underline-offset: 10%;
   color: #0B486B;
+}
+
+.home-page-nav > li > a:hover {
+  color: white;
 }
 
 .main-header {
