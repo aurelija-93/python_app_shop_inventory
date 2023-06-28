@@ -1,7 +1,8 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px;
+  font-family: 'Roboto Flex', Helvetica, Arial, sans-serif; font-size: 16px;
   margin: 0;
   width: 100%;
+  background-color: rgb(82, 120, 143);
 }
 
 .home-page {
@@ -35,7 +36,6 @@ body {
 
 .home-page-nav > li > a {
   font-size: 1.5rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: #0B486B;
 }
 
@@ -90,6 +90,23 @@ a {
 
 .functions {
   display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.functions > .add-product {
+  display: flex;
+  justify-content: center;
+}
+
+.functions > .add-product > a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+}
+
+.functions > div > a:hover {
+  text-decoration: underline;
 }
 
 /* The dropdown container */
@@ -104,22 +121,23 @@ a {
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 1rem 1.2rem;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
+/* Add a background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #CFF09E;
+  color: black;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #e7eef2;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -144,15 +162,85 @@ a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-  
-tr {
-    height: 80px;
+
+.scroll {
+  height: 30rem;
+  overflow-y: scroll;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+  background-color: #d1dfe7;
+  border-radius: 10px;
+}
+
+thead > tr {
+  background-color: #0B486B;
+  color: white;
+  font-weight:200;
+}
+
+table th, table td {
+  padding: 1rem;
+}
+
+th:first-child {
+  text-align: left;
+}
+
+tbody > tr {
+  border-bottom: 1px solid #c0c5c8;
+}
+
+tbody > tr:last-of-type {
+  border-bottom: 4px solid #0B486B;
+}
+
+tbody > tr:nth-of-type(odd) {
+  background-color: #e7eef2;
+}
+
+td {
+  text-align: center;
+}
+
+td > a {
+  text-underline-offset: 10%;
+  color:#0B486B;
+  text-decoration: none;
+}
+
+td > a:hover {
+  text-decoration: underline;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+td:nth-child(8) {
+  padding: 0;
+}
+
+.buttons {
+  width: 3rem;
+  height: 2rem;
+  font-size: x-large;
+  background-color: transparent;
+  border: none;
+  color: #0B486B;
 }
 
 .low-stock {
-  background-color: orange;
+  background-color: rgb(235, 221, 195);
 }
 
 .no-stock {
-  background-color: red;
+  background-color: rgb(229, 201, 201);
 }

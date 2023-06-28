@@ -83,7 +83,7 @@ product12 = Product(
     1, 20, 50, supplier4
     )
 product13 = Product(
-    "Peruvian Instand Darkness Powder",
+    "Peruvian Instant Darkness Powder",
     "Resistant to most muggle light sources.",
     12, 50, 150, supplier4
     )
